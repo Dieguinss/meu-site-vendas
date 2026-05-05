@@ -253,7 +253,7 @@ function sendToWhatsApp(e){
  let negocio=document.getElementById('negocio').value;
  let msg=document.getElementById('msg').value;
 
- let texto=`Novo lead:%0A Nome: ${nome}%0A Negócio: ${negocio}%0A Mensagem: ${msg}`;
+ let texto=`*Novo contato pelo site*%0A%0A👤 Nome: ${nome}%0A💼 Negócio: ${negocio}%0A📝 Mensagem: ${msg}`;
 
  window.open(`https://wa.me/5534999916800?text=${texto}`,'_blank');
 }
