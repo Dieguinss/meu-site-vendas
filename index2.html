@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Growth - Mais Clientes Todos os Dias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:#0f172a;color:#fff}
+
+    header{padding:20px;text-align:center;background:#020617}
+    header h1{font-size:22px}
+
+    .container{max-width:1000px;margin:auto;padding:40px 20px}
+
+    .hero{text-align:center}
+    .hero h2{font-size:38px;font-weight:700;margin-bottom:15px}
+    .hero p{font-size:18px;color:#cbd5f5}
+
+    .btn{display:inline-block;margin-top:25px;padding:15px 25px;background:#22c55e;color:#000;text-decoration:none;border-radius:8px;font-weight:600}
+
+    .section{margin-top:60px}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+
+    .card{background:#1e293b;padding:20px;border-radius:10px}
+
+    .form-box{background:#020617;padding:25px;border-radius:10px}
+    input,textarea{width:100%;padding:12px;margin-top:10px;border:none;border-radius:6px}
+
+    .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;font-size:20px;text-decoration:none;color:#000}
+
+    footer{text-align:center;padding:30px;background:#020617;margin-top:50px}
+
+    @media(max-width:700px){
+      .grid{grid-template-columns:1fr}
+      .hero h2{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DS Growth</h1>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <h2>Transformo cliques em clientes todos os dias</h2>
+    <p>Se você quer vender mais usando a internet, eu posso te ajudar com estratégias simples e diretas.</p>
+    <a href="#form" class="btn">Quero mais clientes</a>
+  </section>
+
+  <section class="section">
+    <h2>O que eu faço por você</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Tráfego Pago</h3>
+        <p>Anúncios no Facebook e Instagram que geram clientes.</p>
+      </div>
+      <div class="card">
+        <h3>Google</h3>
+        <p>Coloco sua empresa no topo das buscas.</p>
+      </div>
+      <div class="card">
+        <h3>Estratégia</h3>
+        <p>Plano simples para você vender todos os dias.</p>
+      </div>
+      <div class="card">
+        <h3>Conversão</h3>
+        <p>Melhoro seu perfil para transformar visitas em vendas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Por que escolher?</h2>
+    <div class="grid">
+      <div class="card">
+        <p>✔ Atendimento direto</p>
+      </div>
+      <div class="card">
+        <p>✔ Foco em resultado</p>
+      </div>
+      <div class="card">
+        <p>✔ Estratégias simples</p>
+      </div>
+      <div class="card">
+        <p>✔ Sem enrolação</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="section">
+    <h2>Receba uma estratégia gratuita</h2>
+    <div class="form-box">
+      <form onsubmit="sendToWhatsApp(event)">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="text" id="negocio" placeholder="Seu negócio" required>
+        <input type="text" id="cidade" placeholder="Sua cidade" required>
+        <textarea id="msg" placeholder="O que você quer melhorar?"></textarea>
+        <button class="btn" type="submit">Quero crescer</button>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<a class="whatsapp" href="#" onclick="abrirWhats()">💬</a>
+
+<footer>
+  <p>© 2026 DS Growth - Mais clientes todos os dias</p>
+</footer>
+
+<script>
+  function sendToWhatsApp(e){
+    e.preventDefault();
+
+    let nome = document.getElementById('nome').value;
+    let negocio = document.getElementById('negocio').value;
+    let cidade = document.getElementById('cidade').value;
+    let msg = document.getElementById('msg').value;
+
+    let texto = `Novo lead:%0A
+Nome: ${nome}%0ANegócio: ${negocio}%0ACidade: ${cidade}%0AMensagem: ${msg}`;
+
+    window.open(`https://wa.me/5534999916800?text=${texto}`, '_blank');
+  }
+
+  function abrirWhats(){
+    let texto = "Olá, quero mais clientes para meu negócio";
+    window.open(`https://wa.me/5534999916800?text=${texto}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
